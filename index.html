@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Un momento… esto fue un simulacro</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;900&display=swap');
+  :root{
+    --blue:#5625EE; --mid:#4A26A9; --dark:#322875; --pink:#E9425C;
+    --gray:#EAEFEF; --ink:#141026;
+    --grad:linear-gradient(120deg,#322875 0%,#5625EE 38%,#9B2F9E 70%,#E9425C 100%);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Poppins',system-ui,sans-serif;color:var(--ink);background:var(--gray);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .hero{background:var(--grad);color:#fff;padding:72px 24px 120px;text-align:center;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;inset:-40% -10% auto;height:120%;background:radial-gradient(60% 60% at 50% 0,rgba(255,255,255,.18),transparent 70%);pointer-events:none}
+  .badge{display:inline-block;font-weight:900;font-size:12px;letter-spacing:.18em;text-transform:uppercase;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);padding:7px 16px;border-radius:999px;margin-bottom:28px}
+  .hero h1{font-weight:200;font-size:clamp(34px,6vw,60px);letter-spacing:-.02em;line-height:1.05;max-width:16ch;margin:0 auto}
+  .hero h1 b{font-weight:900}
+  .hero p{font-weight:400;font-size:clamp(16px,2.4vw,20px);max-width:52ch;margin:22px auto 0;opacity:.92}
+  .wrap{max-width:760px;margin:-80px auto 0;padding:0 20px 80px;position:relative}
+  .card{background:#fff;border-radius:22px;box-shadow:0 24px 60px -24px rgba(50,40,117,.35);padding:clamp(26px,5vw,44px)}
+  .reassure{display:flex;gap:14px;align-items:flex-start;background:#F4F1FF;border:1px solid #E4DBFF;border-radius:14px;padding:18px 20px;margin-bottom:34px}
+  .reassure .dot{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:var(--grad);display:grid;place-items:center;color:#fff;font-weight:900}
+  .reassure b{font-weight:900}
+  h2{font-weight:900;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin:0 0 20px}
+  .sig{display:flex;gap:16px;padding:16px 0;border-top:1px solid #ECECF4}
+  .sig:first-of-type{border-top:0}
+  .num{flex:0 0 auto;width:30px;height:30px;border-radius:9px;background:var(--dark);color:#fff;font-weight:900;display:grid;place-items:center;font-size:14px}
+  .sig h3{font-weight:900;font-size:16px;margin:0 0 3px}
+  .sig p{font-weight:400;font-size:15px;color:#4a4a5a}
+  .sig code{background:#F4F1FF;color:var(--pink);font-weight:900;padding:1px 7px;border-radius:6px;font-size:13px}
+  .rule{height:1px;background:#ECECF4;margin:36px 0}
+  .golden{background:var(--ink);color:#fff;border-radius:16px;padding:26px 24px;text-align:center}
+  .golden .k{font-weight:200;font-size:clamp(20px,3.4vw,27px);line-height:1.25}
+  .golden .k b{font-weight:900;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .foot{text-align:center;color:#8a8aa0;font-size:13px;font-weight:400;margin-top:40px}
+  .foot b{font-weight:900;color:#5a5a70}
+  body[data-mode="reporter"] .hero{background:linear-gradient(120deg,#1f7a4d 0%,#2fae6a 100%)}
+  body[data-mode="reporter"] .num{background:#1f7a4d}
+  body[data-mode="reporter"] h2{color:#1f7a4d}
+  .reveal{opacity:0;transform:translateY(14px);animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards}
+  .d1{animation-delay:.05s}.d2{animation-delay:.18s}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){.reveal{animation:none;opacity:1;transform:none}}
+</style>
+</head>
+<body data-mode="caught">
+  <header class="hero">
+    <span class="badge reveal">Simulacro de seguridad · Binkio</span>
+    <h1 class="reveal d1">Respira. <b>Nadie está en problemas.</b><br>Pero este correo era una trampa.</h1>
+    <p class="reveal d2">Hola <span id="nombre">compañero/a</span> — acabas de hacer clic en un
+      <b>correo de prueba</b> que el equipo de seguridad envió a propósito. No se robó ninguna
+      contraseña y no pasó nada malo. Te mostramos las señales para que la próxima la caces tú.</p>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <div class="reassure">
+        <span class="dot">✓</span>
+        <div><b>Cero consecuencias.</b> Esto no se reporta a nadie de forma individual, no afecta
+        tu trabajo y no capturamos lo que escribiste. El único objetivo es que todos nos volvamos
+        más difíciles de engañar — porque movemos el dinero de la gente.</div>
+      </div>
+
+      <h2>Las 5 señales que tenía este correo</h2>
+
+      <div class="sig"><span class="num">1</span><div>
+        <h3>El dominio no era el nuestro</h3>
+        <p>El remitente parecía de Binkio, pero el dominio tenía un cambio sutil
+        (algo como <code>binkıo</code> o <code>-finance.com</code>). Mira siempre lo que va
+        <b>después de la @</b>, letra por letra.</p></div></div>
+
+      <div class="sig"><span class="num">2</span><div>
+        <h3>Urgencia con reloj</h3>
+        <p>"En 20 minutos", "antes de la junta", "hoy mismo". La prisa apaga el pensamiento:
+        es la herramienta #1 del phishing. <b>Cuanto más urgente, más sospecha.</b></p></div></div>
+
+      <div class="sig"><span class="num">3</span><div>
+        <h3>Te bloqueaban la verificación</h3>
+        <p>"No me llames", "sigo en la sala", "escríbeme solo por aquí". Un atacante necesita que
+        <b>no confirmes por otro canal</b>. Esa frase es la alarma más clara.</p></div></div>
+
+      <div class="sig"><span class="num">4</span><div>
+        <h3>Una petición fuera de lo normal</h3>
+        <p>Validar tu sesión, confirmar tus datos, abrir un enlace a un panel. Si el jefe o un
+        proveedor nunca te pide eso así, <b>no empieza hoy por correo.</b></p></div></div>
+
+      <div class="sig"><span class="num">5</span><div>
+        <h3>El enlace no iba a Binkio</h3>
+        <p>Antes de hacer clic, <b>pasa el cursor por encima</b> (o mantén pulsado en el móvil) y lee
+        a dónde lleva de verdad. Si no es un dominio nuestro, no entres.</p></div></div>
+
+      <div class="rule"></div>
+
+      <div class="golden">
+        <div class="k">La regla de oro:<br><b>ante la duda, verifica por otro canal.</b></div>
+        <p style="font-weight:400;opacity:.8;margin-top:14px;font-size:15px">
+          Una llamada, un mensaje de Slack, pasar por el escritorio de la persona.
+          Treinta segundos que frenan un fraude.</p>
+      </div>
+
+      <p style="font-weight:400;text-align:center;margin-top:30px;font-size:15px;color:#4a4a5a">
+        ¿Viste un correo así de verdad? Reenvíalo a <b style="color:var(--blue)">seguridad@binkio.com</b>
+        y no hagas clic. <b>Reportar es la jugada ganadora</b> — y la próxima vez la medimos.</p>
+
+      <p class="foot">OPERACIÓN ESPEJO · Programa de concientización de Binkio<br>
+        <b>Esto mide el sistema, no a la persona.</b></p>
+    </section>
+  </main>
+
+<script>
+  try{
+    var p = new URLSearchParams(location.search);
+    var n = p.get('n');
+    if(n){ document.getElementById('nombre').textContent = n.replace(/[^\p{L}\s.'-]/gu,'').slice(0,40); }
+    if(p.get('mode')==='reporter'){ document.body.setAttribute('data-mode','reporter'); }
+  }catch(e){}
+</script>
+</body>
+</html>
